@@ -6,12 +6,14 @@ published in IEEE Access in 2021.
 
 ### installation
 
-`pyproject.toml` file lists all the dependencies for this project and
-`requirements-torch.txt` has been provided as a easy way to download torch
-with the custom index URL instead of using PyPI.
+`pyproject.toml` file lists all the dependencies for this project.
 
-Use `pip install .[dev]` and `pip install -r requirements-torch-cpu.txt`
-(or -cuda if you have GPU) in a virtualenv/conda env.
+Use `pip install -e .[dev]` and
+`pip install -e .[torch-gpu] --index-url https://download.pytorch.org/whl/cu124`
+if installing using pip manually in a virtualenv/conda env.
+
+Use `uv sync` if using [uv](https://docs.astral.sh/uv/) for simpler
+management of deps.
 
 ### citation
 
