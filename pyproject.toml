@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "authorship_id"
 version = "0.1.0"
-requires-python = ">=3.10 <=3.13"
+requires-python = ">=3.10,<=3.13"
 description = "Performs single-domain, closed set authorship identification"
 
 dependencies = [
@@ -17,17 +17,41 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-torch-deps = [
-    "torch==2.6.0",
-]
+torch-cpu = ["torch==2.6.0"]
+
+torch-gpu = ["torch==2.6.0"]
 
 dev = [
     "basedpyright",
     "jupyter",
-    "python-type-stubs @ git+https://github.com/microsoft/python-type-stubs.git",
+    "microsoft-python-type-stubs @ git+https://github.com/microsoft/python-type-stubs.git",
     "pandas-stubs",
     "ruff",
 ]
+
+[tool.uv]
+conflicts = [
+    [
+        { extra = "torch-cpu" },
+        { extra = "torch-gpu" },
+    ],
+]
+
+[tool.uv.sources]
+torch = [
+    { index = "torch-cpu", extra = "torch-cpu" },
+    { index = "torch-gpu", extra = "torch-gpu" },
+]
+
+[[tool.uv.index]]
+name = "torch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "torch-gpu"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F", "I", "W"]
