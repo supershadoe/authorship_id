@@ -3,3 +3,4 @@
 pan12-authorship-attribution-corpora
 .idea
 .venv
+*.egg-info

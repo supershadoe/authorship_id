@@ -1,11 +1,11 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=80.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "authorship_id"
 version = "0.1.0"
-requires-python = ">=3.9"
+requires-python = ">=3.10 <=3.13"
 description = "Performs single-domain, closed set authorship identification"
 
 dependencies = [
@@ -18,12 +18,14 @@ dependencies = [
 
 [project.optional-dependencies]
 torch-deps = [
-    "torch",
+    "torch==2.6.0",
 ]
 
 dev = [
     "basedpyright",
     "jupyter",
+    "python-type-stubs @ git+https://github.com/microsoft/python-type-stubs.git",
+    "pandas-stubs",
     "ruff",
 ]
 

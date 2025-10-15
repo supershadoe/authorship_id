@@ -10,8 +10,8 @@ published in IEEE Access in 2021.
 `requirements-torch.txt` has been provided as a easy way to download torch
 with the custom index URL instead of using PyPI.
 
-Use `pip install .[dev]` and `pip install -r requirements-torch.txt`
-in a virtualenv/conda env.
+Use `pip install .[dev]` and `pip install -r requirements-torch-cpu.txt`
+(or -cuda if you have GPU) in a virtualenv/conda env.
 
 ### citation
 
