@@ -1,6 +1,6 @@
 **/.ipynb_checkpoints/*
 **/__pycache__/*
-pan12-authorship-attribution-corpora
+dataset
 .idea
 .venv
 *.egg-info
