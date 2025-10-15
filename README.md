@@ -4,6 +4,18 @@ This project implements the classifiers used in the paper
 ["Authorship identification of electronic texts"](doi.org/10.1109/ACCESS.2021.3098192)
 published in IEEE Access in 2021.
 
+### dataset
+
+A copy of the dataset is committed to the repo but here are the steps to
+recreate it.
+
+Download [PAN12 Author Identification](https://doi.org/10.5281/zenodo.3713273)
+dataset and extract the 2012 train and test corpus and filter the
+"12CtrainXn.txt" files alone in `dataset/train` where X is the author ID and n
+is the sample number.
+
+Also, copy the "12Ctestn.txt" files to `dataset/test` folder.
+
 ### installation
 
 `pyproject.toml` file lists all the dependencies for this project.
