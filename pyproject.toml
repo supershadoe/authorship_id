@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "authorship_id"
+version = "0.1.0"
+requires-python = ">=3.9"
+description = "Performs single-domain, closed set authorship identification"
+
+dependencies = [
+    "scikit-learn",
+    "numpy",
+    "pandas",
+    "tqdm",
+    "scipy",
+]
+
+[project.optional-dependencies]
+torch-deps = [
+    "torch",
+]
+
+dev = [
+    "basedpyright",
+    "jupyter",
+    "ruff",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "W"]
+
+[tool.basedpyright]
+include = ["authorship_id"]
+exclude = ["**/__pycache__"]
+typeCheckingMode = "strict"
