@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=80.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "authorship_id"
+version = "0.1.0"
+requires-python = ">=3.10,<=3.13"
+description = "Performs single-domain, closed set authorship identification"
+
+dependencies = [
+    "jupyter",
+    "numpy",
+    "nltk",
+    "pandarallel",
+    "pandas",
+    "seaborn",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "basedpyright",
+    "jupyterlab-lsp",
+    "microsoft-python-type-stubs @ git+https://github.com/microsoft/python-type-stubs.git",
+    "pandas-stubs",
+    "ruff",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "W"]
+
+[tool.basedpyright]
+include = ["."]
+exclude = ["**/__pycache__"]
+typeCheckingMode = "strict"
