@@ -48,12 +48,15 @@ Two datasets are used for evaluation:
 
 `pyproject.toml` file lists all the dependencies for this project.
 
-Use `pip install -e .[dev]` and
-`pip install -e .[torch-gpu] --index-url https://download.pytorch.org/whl/cu124`
-if installing using pip manually in a virtualenv/conda env.
+Use `pip install -e .` if installing using pip manually in a
+virtualenv/conda env.
 
 Use `uv sync` if using [uv](https://docs.astral.sh/uv/) for simpler
 management of deps.
+
+Additionally, run `pip install -e .[dev]` for other bells and whistles
+like type checker and linter for development purposes. _(uv does this
+automatically)_
 
 ### usage
 

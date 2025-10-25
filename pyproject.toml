@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "authorship_id"
 version = "0.1.0"
-requires-python = ">=3.10,<=3.13"
+requires-python = ">=3.10"
 description = "Performs single-domain, closed set authorship identification"
 
 dependencies = [
@@ -18,7 +18,7 @@ dependencies = [
     "scikit-learn",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "basedpyright",
     "jupyterlab-lsp",
